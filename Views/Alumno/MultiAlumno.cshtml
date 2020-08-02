@@ -1,0 +1,41 @@
+@model List<Alumno>
+
+@{
+    ViewData["Title"] = "Información Alumno";
+}
+
+<div class="text-center">
+    <h1 class="display-4"> @ViewData["Title"]</h1>
+
+    <strong>Vista Parcial</strong>
+    <h2>La cantidad de Alumnos en página es @ViewBag.CantidadAlumno</h2>
+    
+
+    <table class="table table-dark table-hover table-sm">
+        <thead>
+            <tr>
+                <th scope="col">
+                    Nombre
+                </th>
+                <th scope="col">
+                    Id
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var alumno in Model){
+            <tr>
+                <td>@alumno.Name</td>
+                <td>@alumno.UniqueId</td>
+            </tr>
+            }
+            @* @for(int i=0;i<Model.Count;i++){
+                <tr>
+                    <td>@(i+1)) @Model[i].Name</td>
+                    <td>@Model[i].UniqueId</td>
+                </tr>
+            } *@
+        </tbody>
+    </table>
+</div>
+

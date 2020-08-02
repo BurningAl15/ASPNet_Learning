@@ -20531,13 +20531,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\DotNetLearning\\holaMundo\\Views\\Shared\\AsignaturaSimple.cshtml",
-      "TargetPath": "Views\\Shared\\AsignaturaSimple.cshtml",
+      "FilePath": "c:\\DotNetLearning\\holaMundo\\Views\\Asignatura\\index.cshtml",
+      "TargetPath": "Views\\Asignatura\\index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\DotNetLearning\\holaMundo\\Views\\Asignatura\\index.cshtml",
-      "TargetPath": "Views\\Asignatura\\index.cshtml",
+      "FilePath": "c:\\DotNetLearning\\holaMundo\\Views\\Shared\\ObjetoEscuelaSimple.cshtml",
+      "TargetPath": "Views\\Shared\\ObjetoEscuelaSimple.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20566,6 +20566,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\DotNetLearning\\holaMundo\\Views\\Alumno\\MultiAlumno.cshtml",
+      "TargetPath": "Views\\Alumno\\MultiAlumno.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\DotNetLearning\\holaMundo\\Views\\Escuela\\index.cshtml",
       "TargetPath": "Views\\Escuela\\index.cshtml",
       "FileKind": "mvc"
@@ -20573,6 +20578,11 @@
     {
       "FilePath": "c:\\DotNetLearning\\holaMundo\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\DotNetLearning\\holaMundo\\Views\\Alumno\\index.cshtml",
+      "TargetPath": "Views\\Alumno\\index.cshtml",
       "FileKind": "mvc"
     },
     {
