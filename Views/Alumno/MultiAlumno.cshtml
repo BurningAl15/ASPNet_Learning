@@ -11,7 +11,7 @@
     <h2>La cantidad de Alumnos en página es @ViewBag.CantidadAlumno</h2>
     
 
-    <table class="table table-dark table-hover table-sm">
+    @* <table class="table table-dark table-hover table-sm">
         <thead>
             <tr>
                 <th scope="col">
@@ -29,13 +29,9 @@
                 <td>@alumno.UniqueId</td>
             </tr>
             }
-            @* @for(int i=0;i<Model.Count;i++){
-                <tr>
-                    <td>@(i+1)) @Model[i].Name</td>
-                    <td>@Model[i].UniqueId</td>
-                </tr>
-            } *@
+           
         </tbody>
-    </table>
+    </table> *@
+    <partial name="ListaObjetoEscuelaSimple"></partial>
 </div>
 

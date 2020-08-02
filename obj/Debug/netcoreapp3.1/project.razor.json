@@ -20561,6 +20561,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\DotNetLearning\\holaMundo\\Views\\Shared\\ListaObjetoEscuelaSimple.cshtml",
+      "TargetPath": "Views\\Shared\\ListaObjetoEscuelaSimple.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\DotNetLearning\\holaMundo\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

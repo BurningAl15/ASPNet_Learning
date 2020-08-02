@@ -9,13 +9,13 @@
 
     <strong>Vista Parcial</strong>
 
-    @foreach(var asignatura in Model){
+    @* @foreach(var asignatura in Model){
         <partial name="ObjetoEscuelaSimple" model="asignatura"/>
-    }
-
-    @* @for(int i=0;i<4;i++){
-        <p>@ViewBag.simple[i]</p>
     } *@
+
+    <partial name="ListaObjetoEscuelaSimple"></partial>
+
+
     <p>@ViewBag.Fecha</p>
 </div>
 
