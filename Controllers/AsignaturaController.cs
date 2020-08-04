@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using holaMundo.Models;
@@ -9,15 +10,15 @@ namespace holaMundo.Controllers
     {
         public IActionResult Index()
         {
-            var asignatura=new Asignatura{
-                Id=Guid.NewGuid().ToString(),
-                Name="Programación"
-            };
+            // var asignatura=new Asignatura{
+            //     Id=Guid.NewGuid().ToString(),
+            //     Name="Programación"
+            // };
             
             ViewBag.CosaDinamica = "La Monja";
             ViewBag.Fecha=DateTime.Now;
             ViewBag.simple=new List<int>(){1,2,3,5};
-            return View(asignatura);
+            return View(_context.Asignaturas.FirstOrDefault());
         }
 
         // public IActionResult Index()
@@ -40,20 +41,27 @@ namespace holaMundo.Controllers
 
         public IActionResult MultiAsignatura()
         {
-            var listaAsignaturas = new List<Asignatura>(){
-                        new Asignatura{Name="Matemáticas",
-                        Id=Guid.NewGuid().ToString()} ,
-                        new Asignatura{Name="Educación Física",
-                        Id=Guid.NewGuid().ToString()},
-                        new Asignatura{Name="Castellano",
-                        Id=Guid.NewGuid().ToString()},
-                        new Asignatura{Name="Ciencias Naturales",
-                        Id=Guid.NewGuid().ToString()}
-            };
+            // var listaAsignaturas = new List<Asignatura>(){
+            //             new Asignatura{Name="Matemáticas",
+            //             Id=Guid.NewGuid().ToString()} ,
+            //             new Asignatura{Name="Educación Física",
+            //             Id=Guid.NewGuid().ToString()},
+            //             new Asignatura{Name="Castellano",
+            //             Id=Guid.NewGuid().ToString()},
+            //             new Asignatura{Name="Ciencias Naturales",
+            //             Id=Guid.NewGuid().ToString()}
+            // };
             ViewBag.CosaDinamica = "La Monja";
             ViewBag.Fecha=DateTime.Now;
             ViewBag.simple=new List<int>(){1,2,3,5};
-            return View("MultiAsignatura",listaAsignaturas);
+            // return View("MultiAsignatura",_context.Asignaturas.ToList());
+            return View("MultiAsignatura",_context.Asignaturas);
+        }
+
+        private EscuelaContext _context;
+
+        public AsignaturaController(EscuelaContext context){
+            _context=context;
         }
     }
 }

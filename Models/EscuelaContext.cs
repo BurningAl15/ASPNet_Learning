@@ -20,7 +20,7 @@ namespace holaMundo.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder){
             
             base.OnModelCreating(modelBuilder);
-            var escuela = new Escuela("Camacho's School", 2005);
+            var escuela = new Escuela();
             escuela.Id = Guid.NewGuid().ToString();
             escuela.Country = "Perú";
             escuela.City="Lima";
@@ -40,6 +40,10 @@ namespace holaMundo.Models
                         Id=Guid.NewGuid().ToString()},
                         new Asignatura{Name="Ciencias Naturales",
                         Id=Guid.NewGuid().ToString()}
+                        // new Asignatura(),
+                        // new Asignatura(),
+                        // new Asignatura(),
+                        // new Asignatura()
             );
 
             modelBuilder.Entity<Alumno>().HasData(GenerarAlumnosAlAzar().ToArray());

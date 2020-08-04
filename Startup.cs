@@ -29,7 +29,7 @@ namespace holaMundo
 
             services.AddDbContext<EscuelaContext>(
                 options=>options.UseInMemoryDatabase(databaseName:"testDB")
-                );
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

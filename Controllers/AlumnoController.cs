@@ -10,54 +10,21 @@ namespace holaMundo.Controllers
     {
         public IActionResult Index()
         {
-            var alumno=new Alumno{
-                Id=Guid.NewGuid().ToString(),
-                Name="Programación"
-            };
-            
             ViewBag.CosaDinamica = "La Monja";
             ViewBag.Fecha=DateTime.Now;
             ViewBag.simple=new List<int>(){1,2,3,5};
-            return View(alumno);
+            return View(_context.Alumnos.FirstOrDefault());
         }
-
-        // public IActionResult Index()
-        // {
-        //     var listaAlumnos = new List<alumno>(){
-        //                 new alumno{Name="Matemáticas",
-        //                 UniqueId=Guid.NewGuid().ToString()} ,
-        //                 new alumno{Name="Educación Física",
-        //                 UniqueId=Guid.NewGuid().ToString()},
-        //                 new alumno{Name="Castellano",
-        //                 UniqueId=Guid.NewGuid().ToString()},
-        //                 new alumno{Name="Ciencias Naturales",
-        //                 UniqueId=Guid.NewGuid().ToString()}
-        //     };
-        //     ViewBag.CosaDinamica = "La Monja";
-        //     ViewBag.Fecha=DateTime.Now;
-        //     ViewBag.simple=new List<int>(){1,2,3,5};
-        //     return View("Multialumno",listaAlumnos);
-        // }
 
         public IActionResult MultiAlumno()
         {
-            // var listaAlumnos = new List<Alumno>(){
-            //             new Alumno{Name="Aldhair Vera",
-            //             UniqueId=Guid.NewGuid().ToString()} ,
-            //             new Alumno{Name="Nalgancy Rojas",
-            //             UniqueId=Guid.NewGuid().ToString()},
-            //             new Alumno{Name="Pio Jr. 1, el fuerte",
-            //             UniqueId=Guid.NewGuid().ToString()},
-            //             new Alumno{Name="Pio Jr. 2, la amarillita",
-            //             UniqueId=Guid.NewGuid().ToString()}
-            // };
-            var listaAlumnos =new List<Alumno>();
-            listaAlumnos=GenerarAlumnosAlAzar();
+            // var listaAlumnos =new List<Alumno>();
+            // listaAlumnos=GenerarAlumnosAlAzar();
             ViewBag.CosaDinamica = "La Monja";
-            ViewBag.CantidadAlumno=listaAlumnos.Count;
+            ViewBag.CantidadAlumno=392;
             ViewBag.Fecha=DateTime.Now;
-            ViewBag.simple=new List<int>(){1,2,3,5};
-            return View("Multialumno",listaAlumnos);
+            // return View("Multialumno",_context.Alumnos.ToList());
+            return View("Multialumno",_context.Alumnos);
         }
 
         private List<Alumno> GenerarAlumnosAlAzar()
@@ -73,6 +40,12 @@ namespace holaMundo.Controllers
                                Id=Guid.NewGuid().ToString() };
 
             return listaAlumnos.OrderBy((al) => al.Id).ToList();
+        }
+
+        private EscuelaContext _context;
+
+        public AlumnoController(EscuelaContext context){
+            _context=context;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace holaMundo
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            // CreateHostBuilder(args).Build().Run();
             var host=CreateHostBuilder(args).Build();
 
             using(var scope=host.Services.CreateScope()){
@@ -25,7 +25,7 @@ namespace holaMundo
                     var context=servicios.GetRequiredService<EscuelaContext>();
                     context.Database.EnsureCreated();
                 }catch(Exception e){
-                    var logger=servicios.GetRequiredService<ILogger>();
+                    var logger=servicios.GetRequiredService<ILogger<Program>>();
                     logger.LogError(e,"An error occurred creating the database");
                 }
             }
