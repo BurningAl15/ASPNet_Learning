@@ -4,17 +4,17 @@ namespace holaMundo.Models
 {
     public abstract class ObjetoEscuelaBase
     {
-        public string UniqueId { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
 
         public ObjetoEscuelaBase()
         {
-            UniqueId = Guid.NewGuid().ToString();
+            Id = Guid.NewGuid().ToString();
         }
 
         public override string ToString()
         {
-            return $"{Name},{UniqueId}";
+            return $"{Name},{Id}";
         }
     }
 }

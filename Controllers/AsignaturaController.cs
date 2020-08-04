@@ -10,7 +10,7 @@ namespace holaMundo.Controllers
         public IActionResult Index()
         {
             var asignatura=new Asignatura{
-                UniqueId=Guid.NewGuid().ToString(),
+                Id=Guid.NewGuid().ToString(),
                 Name="Programación"
             };
             
@@ -42,13 +42,13 @@ namespace holaMundo.Controllers
         {
             var listaAsignaturas = new List<Asignatura>(){
                         new Asignatura{Name="Matemáticas",
-                        UniqueId=Guid.NewGuid().ToString()} ,
+                        Id=Guid.NewGuid().ToString()} ,
                         new Asignatura{Name="Educación Física",
-                        UniqueId=Guid.NewGuid().ToString()},
+                        Id=Guid.NewGuid().ToString()},
                         new Asignatura{Name="Castellano",
-                        UniqueId=Guid.NewGuid().ToString()},
+                        Id=Guid.NewGuid().ToString()},
                         new Asignatura{Name="Ciencias Naturales",
-                        UniqueId=Guid.NewGuid().ToString()}
+                        Id=Guid.NewGuid().ToString()}
             };
             ViewBag.CosaDinamica = "La Monja";
             ViewBag.Fecha=DateTime.Now;
