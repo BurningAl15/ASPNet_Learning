@@ -10,9 +10,6 @@ namespace holaMundo.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.CosaDinamica = "La Monja";
-            ViewBag.Fecha=DateTime.Now;
-            ViewBag.simple=new List<int>(){1,2,3,5};
             return View(_context.Alumnos.FirstOrDefault());
         }
 
@@ -20,9 +17,6 @@ namespace holaMundo.Controllers
         {
             // var listaAlumnos =new List<Alumno>();
             // listaAlumnos=GenerarAlumnosAlAzar();
-            ViewBag.CosaDinamica = "La Monja";
-            ViewBag.CantidadAlumno=392;
-            ViewBag.Fecha=DateTime.Now;
             // return View("Multialumno",_context.Alumnos.ToList());
             return View("Multialumno",_context.Alumnos);
         }

@@ -9,7 +9,6 @@ namespace holaMundo.Controllers
 
         public IActionResult Index()
         {            
-            ViewBag.CosaDinamica = "La Monja";
             var escuela = _context.Escuelas.FirstOrDefault();
             return View(escuela);
         }

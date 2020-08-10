@@ -8,53 +8,50 @@ namespace holaMundo.Controllers
 {
     public class AsignaturaController : Controller
     {
-        public IActionResult Index()
-        {
-            // var asignatura=new Asignatura{
-            //     Id=Guid.NewGuid().ToString(),
-            //     Name="Programación"
-            // };
+        // public IActionResult Index()
+        // {
+        //     // var asignatura=new Asignatura{
+        //     //     asignaturaId=GuasignaturaId.NewGuasignaturaId().ToString(),
+        //     //     Name="Programación"
+        //     // };
             
-            ViewBag.CosaDinamica = "La Monja";
-            ViewBag.Fecha=DateTime.Now;
-            ViewBag.simple=new List<int>(){1,2,3,5};
-            return View(_context.Asignaturas.FirstOrDefault());
-        }
+        //     return View(_context.Asignaturas.FirstOrDefault());
+        // }
 
         // public IActionResult Index()
         // {
         //     var listaAsignaturas = new List<Asignatura>(){
         //                 new Asignatura{Name="Matemáticas",
-        //                 UniqueId=Guid.NewGuid().ToString()} ,
+        //                 UniqueasignaturaId=GuasignaturaId.NewGuasignaturaId().ToString()} ,
         //                 new Asignatura{Name="Educación Física",
-        //                 UniqueId=Guid.NewGuid().ToString()},
+        //                 UniqueasignaturaId=GuasignaturaId.NewGuasignaturaId().ToString()},
         //                 new Asignatura{Name="Castellano",
-        //                 UniqueId=Guid.NewGuid().ToString()},
+        //                 UniqueasignaturaId=GuasignaturaId.NewGuasignaturaId().ToString()},
         //                 new Asignatura{Name="Ciencias Naturales",
-        //                 UniqueId=Guid.NewGuid().ToString()}
+        //                 UniqueasignaturaId=GuasignaturaId.NewGuasignaturaId().ToString()}
         //     };
         //     ViewBag.CosaDinamica = "La Monja";
         //     ViewBag.Fecha=DateTime.Now;
         //     ViewBag.simple=new List<int>(){1,2,3,5};
         //     return View("MultiAsignatura",listaAsignaturas);
         // }
+        [Route("Asignatura/Index")]
+        [Route("Asignatura/Index/{asignaturaId?}")]
+        public IActionResult Index(string asignaturaId){
+            
+            if(!string.IsNullOrWhiteSpace(asignaturaId)){
+                var asignatura=from asig in _context.Asignaturas
+                where asig.Id==asignaturaId
+                select asig;
+    
+                return View(asignatura.SingleOrDefault());
+            }else{
+                return View("MultiAsignatura",_context.Asignaturas);
+            }
+        }
 
-        public IActionResult MultiAsignatura()
+        public IActionResult MultiAsignatura(string asignaturaId)
         {
-            // var listaAsignaturas = new List<Asignatura>(){
-            //             new Asignatura{Name="Matemáticas",
-            //             Id=Guid.NewGuid().ToString()} ,
-            //             new Asignatura{Name="Educación Física",
-            //             Id=Guid.NewGuid().ToString()},
-            //             new Asignatura{Name="Castellano",
-            //             Id=Guid.NewGuid().ToString()},
-            //             new Asignatura{Name="Ciencias Naturales",
-            //             Id=Guid.NewGuid().ToString()}
-            // };
-            ViewBag.CosaDinamica = "La Monja";
-            ViewBag.Fecha=DateTime.Now;
-            ViewBag.simple=new List<int>(){1,2,3,5};
-            // return View("MultiAsignatura",_context.Asignaturas.ToList());
             return View("MultiAsignatura",_context.Asignaturas);
         }
 

@@ -13,7 +13,7 @@ namespace holaMundo.Models
         public string Direction { get; set; }
 
         public TiposEscuela school_Type { get; set; }
-        public List<Curso> Courses { get; set; }
+        public List<Curso> Cursos { get; set; }
 
         public Escuela(){
             this.Name="Camacho's School";
@@ -24,16 +24,6 @@ namespace holaMundo.Models
             this.Name=_name;
             this.CreationYear=_year;
         }
-        //  => (Name, CreationYear) = (_name, _year);
-
-        // public Escuela(string _name, int _year, 
-        //                TiposEscuela schoolType, 
-        //                string Country = "", string City = "") : base()
-        // {
-        //     (_name, CreationYear) = (_name, _year);
-        //     this.Country = Country;
-        //     this.City = City;
-        // }
 
         public override string ToString()
         {
